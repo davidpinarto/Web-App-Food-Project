@@ -36,35 +36,6 @@
         <h2 class="search-result-header">Search Result</h2>
 
         <div class="card-list">
-          <div class="pop-up">
-            <div class="overlay"></div>
-            <div class="content">
-              <div class="close-btn" onclick="togglePopUp()">
-                <i class="fa-solid fa-circle-xmark"></i>
-              </div>
-              <div class="card-item-pop-up">
-                <h3>Ayam Percik</h3>
-                <figure>
-                  <img
-                    src="https://www.themealdb.com/images/media/meals/020z181619788503.jpg"
-                    alt="Ayam-Percik-Image"
-                  />
-                  <figcaption>a chicken with a deliciuos taste!</figcaption>
-                </figure>
-                <h5>Description</h5>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  amet aspernatur, magni hic veritatis eius non explicabo, porro
-                  consequatur neque illum sapiente necessitatibus doloribus esse
-                  magnam. Veritatis repellendus alias reiciendis. Lorem ipsum
-                  dolor sit, amet consectetur adipisicing elit. Alias
-                  consequatur aperiam quis, est minus vel tempora nostrum
-                  dignissimos praesentium maiores consequuntur, incidunt ut,
-                  repellat ipsum nesciunt! Corrupti consequatur itaque quo.
-                </p>
-              </div>
-            </div>
-          </div>
           <div class="card-item">
             <h3>Ayam Percik</h3>
             <figure>
@@ -87,8 +58,16 @@
             </p>
             <button onclick="togglePopUp()">Read More</button>
           </div>
+        </div>
+      </div>
 
-          <div class="card-item">
+      <div class="pop-up" id="card-pop-up">
+        <div class="overlay" onclick="togglePopUp()"></div>
+        <div class="content">
+          <div class="close-btn" onclick="togglePopUp()">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+          <div class="card-item-pop-up">
             <h3>Ayam Percik</h3>
             <figure>
               <img
@@ -106,30 +85,8 @@
               sit, amet consectetur adipisicing elit. Alias consequatur aperiam
               quis, est minus vel tempora nostrum dignissimos praesentium
               maiores consequuntur, incidunt ut, repellat ipsum nesciunt!
-              Corrupti consequatur itaque quo. Lorem, ipsum dolor sit amet
-              consectetur adipisicing elit. Veniam ipsum dolore necessitatibus,
-              accusantium fugiat est ab sit atque maiores voluptatum possimus
-              reiciendis. Eius cumque aliquam iste voluptatem similique maiores
-              sint!
+              Corrupti consequatur itaque quo.
             </p>
-            <button>Read More</button>
-          </div>
-
-          <div class="card-item">
-            <h3>Ayam Percik</h3>
-            <figure>
-              <img
-                src="https://www.themealdb.com/images/media/meals/020z181619788503.jpg"
-                alt="Ayam-Percik-Image"
-              />
-              <figcaption>a chicken with a deliciuos taste!</figcaption>
-            </figure>
-            <h5>Description</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure amet
-              aspernatur, magni hic veritatis eius non explicabo, porro
-            </p>
-            <button>Read More</button>
           </div>
         </div>
       </div>
@@ -190,6 +147,5 @@
         <p>Copyright &#169; 2023 All Rights Reserved</p>
       </div>
     </footer>
-    <script src="./script/view/main.js"></script>
   </body>
 </html>

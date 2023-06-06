@@ -166,6 +166,7 @@ header {
   border-radius: 4px;
   padding: 5px;
   width: 100%;
+  cursor: zoom-in;
 }
 
 .card-item p {
@@ -261,46 +262,26 @@ header {
 
 /* for testiing */
 
-.pop-up {
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  bottom: 0;
-}
 .overlay {
   position: fixed;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.7);
   top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
-  /* width: 100vw;
-  height: 100vh; */
-  /* display: none; */
-}
-
-/* .overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 2;
-} */
+  display: none;
+}
 
 .content {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   /* padding: 5rem; */
   width: 60vw;
   height: 80vh;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   overflow-y: scroll;
 }
 
@@ -362,5 +343,6 @@ header {
 }
 
 .pop-up.active .content {
+  transition: all 0.3s ease-in-out;
   transform: translate(-50%, -50%) scale(1);
 }

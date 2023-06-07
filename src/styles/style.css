@@ -59,6 +59,31 @@ header {
   text-decoration: none;
 }
 
+.nav-bars {
+  color: #dde6ed;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+
+.nav-xmark {
+  color: #dde6ed;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: -100%;
+}
+
 /* end of header */
 
 .jumbotron {
@@ -72,6 +97,7 @@ header {
   background-size: cover;
   color: #dde6ed;
   position: relative;
+  text-align: center;
 }
 
 .jumbotron h1 {
@@ -86,6 +112,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  padding: 2rem;
 }
 
 .search-bar {
@@ -94,11 +121,12 @@ header {
   align-items: center;
   position: relative;
   border-radius: 3rem;
+  width: 80%;
 }
 
 .search-bar input {
-  width: 50rem;
   padding: 1rem;
+  width: 100%;
   border-radius: 3rem;
   border: solid 1px #dde6ed;
   background-color: #dde6ed;
@@ -138,7 +166,7 @@ header {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
 .card-item {
@@ -207,6 +235,7 @@ header {
   justify-content: space-between;
   gap: 100px;
   color: #dde6ed;
+  flex-wrap: wrap;
 }
 
 .footer-item {
@@ -340,9 +369,56 @@ header {
 } */
 .pop-up.active .overlay {
   display: block;
+  backdrop-filter: blur(6px);
 }
 
 .pop-up.active .content {
   transition: all 0.3s ease-in-out;
   transform: translate(-50%, -50%) scale(1);
+}
+
+/* media querry */
+
+@media screen and (max-width: 800px) {
+  .top-navigation {
+    /* display: none; */
+    position: absolute;
+    top: -100%;
+    /* transition: all 0.3s ease-out; */
+  }
+
+  .nav-bars {
+    display: block;
+  }
+
+  .top-navigation.nav-bars-active {
+    position: fixed;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 50%;
+    /* right: 50; */
+    transform: translate(-50%);
+    /* bottom: 0; */
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(6px);
+  }
+
+  .top-navigation.nav-bars-active ul {
+    flex-direction: column;
+  }
+  .top-navigation.nav-overlay.nav-overlay-active {
+    display: block;
+    /* top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+  }
+  .nav-xmark-active {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    transition: all 0.3s ease-in-out;
+  }
 }

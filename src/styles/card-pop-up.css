@@ -1,0 +1,120 @@
+.overlay {
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.content {
+  position: fixed;
+  z-index: 3;
+  width: 70vw;
+  top: 3%;
+  left: 5%;
+  transform: translate(-3%, -5%) scale(0);
+  overflow-y: scroll;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  color: black;
+  z-index: 3;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.card-item-pop-up {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  position: relative;
+}
+
+.card-item-pop-up h3 {
+  text-align: center;
+}
+
+.card-item-pop-up figure {
+  padding: 1rem;
+}
+
+.card-item-pop-up figure {
+  text-align: center;
+}
+
+.card-item-pop-up img {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 5px;
+  width: 70%;
+  max-height: 300px;
+  object-position: center;
+}
+
+.pop-up.active .overlay {
+  display: block;
+  backdrop-filter: blur(6px);
+}
+
+.pop-up.active .content {
+  transition: all 0.3s ease-in-out;
+  top: 3%;
+  left: 15%;
+  transform: translate(0, 0) scale(1);
+  border-radius: 20px;
+  max-height: 94vh;
+}
+
+.pop-up.active .content:hover {
+  box-shadow: 0 0 2px 5px rgba(0, 140, 186, 0.5);
+}
+
+/* media querry */
+
+@media screen and (max-width: 800px) {
+  .content {
+    width: 90vw;
+    top: 3%;
+    left: 5%;
+    transform: translate(-3%, -5%) scale(0);
+    max-height: 94vh;
+  }
+
+  .pop-up.active .content {
+    transition: all 0.3s ease-in-out;
+    top: 3%;
+    left: 5%;
+    transform: translate(0, 0) scale(1);
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    width: 90vw;
+    top: 3%;
+    left: 5%;
+    transform: translate(-3%, -5%) scale(0);
+    max-height: 94vh;
+  }
+
+  .pop-up.active .content {
+    transition: all 0.3s ease-in-out;
+    top: 3%;
+    left: 5%;
+    transform: translate(0, 0) scale(1);
+    border-radius: 20px;
+  }
+}

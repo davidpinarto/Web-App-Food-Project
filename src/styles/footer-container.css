@@ -1,0 +1,60 @@
+.footer-container {
+  border-top: solid 3px black;
+  background-color: #526d82;
+  color: black;
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  color: #dde6ed;
+  flex-wrap: wrap;
+}
+
+.footer-item {
+  width: 25rem;
+}
+
+.footer-container ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-container h4 {
+  padding-left: 0.5rem;
+}
+
+.footer-container ul li a {
+  color: inherit;
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+}
+
+.footer-container ul li a:hover {
+  background-color: #dde6ed;
+  cursor: pointer;
+  color: #27374d;
+  box-shadow: 0 0 2px 3px rgba(255, 255, 255, 0.5);
+}
+
+.social-media ul {
+  padding-top: 1rem;
+}
+
+.footer-container .contact-us ul {
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.footer-copyright {
+  background-color: #27374d;
+  color: #dde6ed;
+}
+
+.footer-copyright p {
+  text-align: center;
+  margin: 0;
+  padding: 2rem;
+}

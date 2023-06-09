@@ -1,0 +1,116 @@
+#navigation-container {
+  display: flex;
+  width: 100%;
+  background-color: #27374d;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  border-bottom: solid 1px #9db2bf;
+}
+
+.logo {
+  color: #dde6ed;
+  font-size: 1.8rem;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.top-navigation ul {
+  display: flex;
+  gap: 0.8rem;
+  list-style: none;
+  font-weight: 500;
+}
+
+.top-navigation ul li {
+  padding: 0.5rem 2rem;
+  color: #dde6ed;
+  text-transform: uppercase;
+  border-radius: 45px;
+  transition: all 0.2s ease-in-out;
+}
+
+.top-navigation ul li:hover {
+  background-color: #dde6ed;
+  cursor: pointer;
+  color: #27374d;
+  box-shadow: 0 0 2px 3px rgba(255, 255, 255, 0.5);
+}
+
+.top-navigation ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-bars {
+  color: #dde6ed;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: -100%;
+  /* bottom: 0;
+    left: 0;
+    right: 0; */
+}
+
+.nav-xmark {
+  color: #dde6ed;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: -100%;
+}
+
+@media screen and (max-width: 800px) {
+  .top-navigation {
+    /* display: none; */
+    position: absolute;
+    top: -100%;
+    /* transition: all 0.3s ease-out; */
+  }
+
+  .nav-bars {
+    display: block;
+  }
+
+  .top-navigation.nav-bars-active {
+    position: fixed;
+    padding: 2rem;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    /* right: 50; */
+    transform: translate(-50%);
+    /* bottom: 0; */
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .top-navigation.nav-bars-active ul {
+    flex-direction: column;
+  }
+  .nav-overlay.nav-overlay-active {
+    /* display: block; */
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.1s ease-in-out;
+  }
+  .nav-xmark-active {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+}

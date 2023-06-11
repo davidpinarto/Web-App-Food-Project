@@ -12,6 +12,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  /* flex-direction: column; */
   flex-wrap: wrap;
   gap: 2.2rem;
 }
@@ -42,6 +43,22 @@
   padding: 5px;
   width: 100%;
   cursor: zoom-in;
+}
+
+.card-item table {
+  border-collapse: collapse;
+  margin-bottom: 3rem;
+}
+
+.card-item table th {
+  text-align: left;
+}
+
+.card-item table td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
 
 .card-item p {

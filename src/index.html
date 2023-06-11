@@ -28,8 +28,12 @@
           <div class="jumbotron-head-container">
             <h1>a collection of the best recipes in the world!</h1>
             <div class="search-bar">
-              <input type="search" placeholder="Search Recipes..." />
-              <button>Search</button>
+              <input
+                type="search"
+                placeholder="Search Recipes..."
+                id="searchElement"
+              />
+              <button id="searchBtnElement">Search</button>
             </div>
             <p>
               You can try to search our free recipes with a complete instruction
@@ -42,7 +46,7 @@
           <h2 class="search-result-header">Search Result</h2>
 
           <div class="card-list">
-            <div class="card-item">
+            <!-- <div class="card-item">
               <h3>Ayam Percik</h3>
               <figure>
                 <img
@@ -52,74 +56,53 @@
                 />
                 <figcaption>a chicken with a deliciuos taste!</figcaption>
               </figure>
-              <h5>Description</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                amet aspernatur, magni hic veritatis eius non explicabo, porro
-                consequatur neque illum sapiente necessitatibus doloribus esse
-                magnam. Veritatis repellendus alias reiciendis. Lorem ipsum
-                dolor sit, amet consectetur adipisicing elit. Alias consequatur
-                aperiam quis, est minus vel tempora nostrum dignissimos
-                praesentium maiores consequuntur, incidunt ut, repellat ipsum
-                nesciunt! Corrupti consequatur itaque quo.
-              </p>
+              <table>
+                <tr>
+                  <th>Ingredients</th>
+                  <th>Measurement</th>
+                </tr>
+                <tr>
+                  <td>Olive Oil</td>
+                  <td>4 tbs</td>
+                </tr>
+                <tr>
+                  <td>Lamb</td>
+                  <td>750g</td>
+                </tr>
+                <tr>
+                  <td>Saffron</td>
+                  <td>1 1/2 tsp</td>
+                </tr>
+                <tr>
+                  <td>Onion</td>
+                  <td>1 Large Chopped</td>
+                </tr>
+                <tr>
+                  <td>Water</td>
+                  <td>25 ml</td>
+                </tr>
+                <tr>
+                  <td>Parsley</td>
+                  <td>30g</td>
+                </tr>
+                <tr>
+                  <td>Butter</td>
+                  <td>1 tbs</td>
+                </tr>
+                <tr>
+                  <td>Lemon</td>
+                  <td>1</td>
+                </tr>
+              </table>
               <button class="pop-up-trigger-btn">Read More</button>
-            </div>
-
-            <div class="card-item">
-              <h3>Ayam Percik</h3>
-              <figure>
-                <img
-                  src="https://www.themealdb.com/images/media/meals/020z181619788503.jpg"
-                  alt="Ayam-Percik-Image"
-                  class="food-image"
-                />
-                <figcaption>a chicken with a deliciuos taste!</figcaption>
-              </figure>
-              <h5>Description</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                amet aspernatur, magni hic veritatis eius non explicabo, porro
-                consequatur neque illum sapiente necessitatibus doloribus esse
-                magnam. Veritatis repellendus alias reiciendis. Lorem ipsum
-                dolor sit, amet consectetur adipisicing elit. Alias consequatur
-                aperiam quis, est minus vel tempora nostrum dignissimos
-                praesentium maiores consequuntur, incidunt ut, repellat ipsum
-                nesciunt! Corrupti consequatur itaque quo.
-              </p>
-              <button class="pop-up-trigger-btn">Read More</button>
-            </div>
-
-            <div class="card-item">
-              <h3>Ayam Percik</h3>
-              <figure>
-                <img
-                  src="https://www.themealdb.com/images/media/meals/020z181619788503.jpg"
-                  alt="Ayam-Percik-Image"
-                  class="food-image"
-                />
-                <figcaption>a chicken with a deliciuos taste!</figcaption>
-              </figure>
-              <h5>Description</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                amet aspernatur, magni hic veritatis eius non explicabo, porro
-                consequatur neque illum sapiente necessitatibus doloribus esse
-                magnam. Veritatis repellendus alias reiciendis. Lorem ipsum
-                dolor sit, amet consectetur adipisicing elit. Alias consequatur
-                aperiam quis, est minus vel tempora nostrum dignissimos
-                praesentium maiores consequuntur, incidunt ut, repellat ipsum
-                nesciunt! Corrupti consequatur itaque quo.
-              </p>
-              <button class="pop-up-trigger-btn">Read More</button>
-            </div>
+            </div> -->
           </div>
         </div>
 
         <div class="pop-up" id="card-pop-up">
-          <div class="overlay pop-up-trigger-btn"></div>
+          <div class="overlay pop-up-close-btn"></div>
           <div class="content">
-            <div class="close-btn pop-up-trigger-btn">
+            <div class="close-btn pop-up-close-btn">
               <i class="fa-solid fa-circle-xmark"></i>
             </div>
             <div class="card-item-pop-up">

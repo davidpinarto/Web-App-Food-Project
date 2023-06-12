@@ -65,19 +65,78 @@ const main = () => {
     });
 
     // toggle pop up
-    const popUp = document.getElementById('card-pop-up');
+    // const popUp = document.getElementById('card-pop-up');
     const mealBtn = document.querySelectorAll('.pop-up-trigger-btn');
-    const popUpCloseElement = document.querySelectorAll('.pop-up-close-btn');
+    // const popUpCloseElement = document.querySelectorAll('.pop-up-close-btn');
 
     mealBtn.forEach((value) => {
       value.addEventListener('click', () => {
-        contentContainer.removeChild(contentContainer.children[2]);
+        // contentContainer.removeChild(contentContainer.children[2]);
+
         const popUpElement = document.createElement('div');
         popUpElement.classList.add('pop-up');
         popUpElement.setAttribute('id', 'card-pop-up');
 
+        // overlay
         const popUpOverlay = document.createElement('div');
         popUpOverlay.classList.add('overlay');
+
+        // content
+        const popUpContent = document.createElement('div');
+        popUpContent.classList.add('content');
+
+        const popUpCloseBtn = document.createElement('div');
+        popUpCloseBtn.classList.add('close-btn', 'pop-up-close-btn');
+        const popUpXMark = document.createElement('i');
+        popUpXMark.classList.add('fa-solid', 'fa-circle-xmark');
+        popUpCloseBtn.append(popUpXMark);
+
+        // card item
+        const popUpCardItem = document.createElement('div');
+        popUpCardItem.classList.add('card-item-pop-up');
+
+        const cardItemChildren = value.parentElement.cloneNode(true).children;
+
+        const arr = [...cardItemChildren];
+
+        for (let i = 0; i < arr.length - 1; i++) {
+          popUpCardItem.append(arr[i]);
+        }
+        // cari dulu judulnya lalu cari hasilnya di results
+        // instruction
+        // console.log(results);
+        const findTheTitleText = arr.filter((child) => child.innerText === arr[0].innerText);
+        const findDescriptionByTitle = results
+          .filter((child) => child.strMeal === findTheTitleText[0].innerText);
+
+        const mealInstructionsTitle = document.createElement('h3');
+        mealInstructionsTitle.innerText = 'Instructions';
+
+        const mealInstructionsBody = document.createElement('p');
+        mealInstructionsBody.innerText = findDescriptionByTitle[0].strInstructions;
+
+        popUpCardItem.append(mealInstructionsTitle, mealInstructionsBody);
+        // console.log(findTheTitleText[0].innerText);
+        console.log(findDescriptionByTitle);
+
+        popUpContent.append(popUpCloseBtn, popUpCardItem);
+
+        // tambahkan semua ke dalam element pop-up
+        popUpElement.append(popUpOverlay, popUpContent);
+        contentContainer.append(popUpElement);
+        const popUpToggleFunction = () => {
+          popUpElement.classList.toggle('active');
+          if (popUpElement.matches('.active')) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = 'auto';
+            contentContainer.removeChild(contentContainer.children[2]);
+          }
+        };
+
+        popUpXMark.addEventListener('click', popUpToggleFunction);
+        popUpOverlay.addEventListener('click', popUpToggleFunction);
+        popUpToggleFunction();
       });
     });
 

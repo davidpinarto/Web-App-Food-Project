@@ -63,6 +63,22 @@
   object-position: center;
 }
 
+.card-item-pop-up table {
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.card-item-pop-up table th {
+  text-align: left;
+}
+
+.card-item-pop-up table td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
 .pop-up.active .overlay {
   display: block;
   backdrop-filter: blur(6px);

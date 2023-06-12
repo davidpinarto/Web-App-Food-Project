@@ -1,3 +1,7 @@
+footer {
+  display: none;
+}
+
 .footer-container {
   border-top: solid 3px black;
   background-color: #526d82;

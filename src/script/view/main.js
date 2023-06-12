@@ -61,27 +61,19 @@ const main = () => {
         mealBtn,
       );
       cardList.append(cardItem);
-      // console.log(value.strMeal);
     });
 
-    // toggle pop up
-    // const popUp = document.getElementById('card-pop-up');
     const mealBtn = document.querySelectorAll('.pop-up-trigger-btn');
-    // const popUpCloseElement = document.querySelectorAll('.pop-up-close-btn');
 
     mealBtn.forEach((value) => {
       value.addEventListener('click', () => {
-        // contentContainer.removeChild(contentContainer.children[2]);
-
         const popUpElement = document.createElement('div');
         popUpElement.classList.add('pop-up');
         popUpElement.setAttribute('id', 'card-pop-up');
 
-        // overlay
         const popUpOverlay = document.createElement('div');
         popUpOverlay.classList.add('overlay');
 
-        // content
         const popUpContent = document.createElement('div');
         popUpContent.classList.add('content');
 
@@ -91,7 +83,6 @@ const main = () => {
         popUpXMark.classList.add('fa-solid', 'fa-circle-xmark');
         popUpCloseBtn.append(popUpXMark);
 
-        // card item
         const popUpCardItem = document.createElement('div');
         popUpCardItem.classList.add('card-item-pop-up');
 
@@ -102,9 +93,7 @@ const main = () => {
         for (let i = 0; i < arr.length - 1; i++) {
           popUpCardItem.append(arr[i]);
         }
-        // cari dulu judulnya lalu cari hasilnya di results
-        // instruction
-        // console.log(results);
+
         const findTheTitleText = arr.filter((child) => child.innerText === arr[0].innerText);
         const findDescriptionByTitle = results
           .filter((child) => child.strMeal === findTheTitleText[0].innerText);
@@ -116,12 +105,9 @@ const main = () => {
         mealInstructionsBody.innerText = findDescriptionByTitle[0].strInstructions;
 
         popUpCardItem.append(mealInstructionsTitle, mealInstructionsBody);
-        // console.log(findTheTitleText[0].innerText);
-        console.log(findDescriptionByTitle);
 
         popUpContent.append(popUpCloseBtn, popUpCardItem);
 
-        // tambahkan semua ke dalam element pop-up
         popUpElement.append(popUpOverlay, popUpContent);
         contentContainer.append(popUpElement);
         const popUpToggleFunction = () => {
@@ -140,22 +126,24 @@ const main = () => {
       });
     });
 
-    // const popUpToggleFunction = () => {
-    //   popUp.classList.toggle('active');
-    //   if (popUp.matches('.active')) {
-    //     document.body.style.overflow = 'hidden';
-    //   } else {
-    //     document.body.style.overflow = 'auto';
-    //   }
-    // };
+    const cardContainer = document.querySelector('.card-container');
+    const footer = document.querySelector('footer');
+    cardContainer.style.display = 'flex';
+    footer.style.display = 'block';
 
-    // mealBtn.forEach((value) => {
-    //   value.addEventListener('click', popUpToggleFunction);
-    // });
+    // cardContainer.scrollIntoView({ behavior: 'smooth' });
+    function scrollToTargetAdjusted() {
+      const element = cardContainer;
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-    // popUpCloseElement.forEach((value) => {
-    //   value.addEventListener('click', popUpToggleFunction);
-    // });
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+    scrollToTargetAdjusted();
   };
 
   const fallbackResult = (message) => {
@@ -164,24 +152,38 @@ const main = () => {
     errorElement.innerText = `${message} not found`;
 
     cardList.append(errorElement);
+
+    const cardContainer = document.querySelector('.card-container');
+    const footer = document.querySelector('footer');
+    cardContainer.style.display = 'flex';
+    footer.style.display = 'block';
+
+    function scrollToTargetAdjusted() {
+      const element = cardContainer;
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+    scrollToTargetAdjusted();
   };
 
   const onBtnSearchClicked = async () => {
     try {
       const result = await DataSource.listMealByName(searchElement.value);
       const { meals } = result;
-      if (meals.length > 8) meals.length = 8;
-      // console.log(meals[0].strMeal);
       renderResult(meals);
     } catch (message) {
-      // console.error(message);
       fallbackResult(searchElement.value);
     }
   };
 
   searchBtnElement.addEventListener('click', onBtnSearchClicked);
 
-  // nav-bars
   const topNavigation = document.querySelector('.top-navigation');
   const navBars = document.querySelector('.nav-bars');
   const navXMark = document.querySelector('.nav-xmark');

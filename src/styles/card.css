@@ -1,11 +1,12 @@
 .card-container {
   padding: 2.5rem 1rem;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 2.5rem;
   color: #27374d;
+  display: none;
 }
 
 .card-list {
@@ -60,8 +61,8 @@ th {
   padding: 8px;
 }
 
-.card-item p {
-  padding-bottom: 3rem;
+.card-item table tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 .card-item button {

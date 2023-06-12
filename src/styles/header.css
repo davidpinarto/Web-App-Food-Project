@@ -96,6 +96,7 @@
 
   .top-navigation.nav-bars-active ul {
     flex-direction: column;
+    padding: 2.2rem;
   }
   .nav-overlay.nav-overlay-active {
     /* display: block; */

@@ -7,7 +7,7 @@ class CardList extends HTMLElement {
 
   renderError(message) {
     this.innerHTML = '';
-    this.innerHTML += `<h2 class="placeholder">${message}</h2>`;
+    this.innerHTML += `<h3>${message} not found</h3>`;
   }
 
   render() {

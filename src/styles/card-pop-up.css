@@ -79,6 +79,10 @@ th {
   padding: 8px;
 }
 
+.card-item-pop-up table tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 .pop-up.active .overlay {
   display: block;
   backdrop-filter: blur(6px);

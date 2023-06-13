@@ -1,13 +1,16 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-underscore-dangle */
+import './card-item.js';
+
 class CardList extends HTMLElement {
   set meals(meals) {
     this._meals = meals;
     this.render();
   }
 
-  renderError(message) {
+  renderError(keyword) {
     this.innerHTML = '';
-    this.innerHTML += `<h3>${message} not found</h3>`;
+    this.innerHTML += `<h3>${keyword} not found</h3>`;
   }
 
   render() {

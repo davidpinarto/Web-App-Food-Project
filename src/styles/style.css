@@ -1,14 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
-/* header style */
 @import url("./header.css");
-/* jumbotron style */
 @import url("./jumbotron.css");
-/* card style */
 @import url("./card.css");
-/* card pop-up style */
 @import url("./card-pop-up.css");
-/* footer comtainer */
 @import url("./footer-container.css");
 
 * {

@@ -1,67 +1,16 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-plusplus */
+import '../component/card-list.js';
 import DataSource from '../data/data-source';
 
 const main = () => {
   const contentContainer = document.getElementById('content-container');
   const searchElement = document.getElementById('searchElement');
   const searchBtnElement = document.getElementById('searchBtnElement');
-  const cardList = document.querySelector('.card-list');
+  const cardList = document.querySelector('card-list');
 
   const renderResult = (results) => {
-    cardList.innerHTML = '';
-    results.forEach((value) => {
-      const cardItem = document.createElement('div');
-      cardItem.classList.add('card-item');
-
-      const mealTitle = document.createElement('h3');
-      mealTitle.innerText = value.strMeal;
-
-      const imgThumbContainer = document.createElement('figure');
-      const imgThumb = document.createElement('img');
-      imgThumb.setAttribute('src', `${value.strMealThumb}`);
-      imgThumb.setAttribute('alt', `${value.strMeal}-image`);
-      imgThumb.classList.add('food-image');
-      const imgThumbCaption = document.createElement('figcaption');
-      imgThumbCaption.innerText = `Category: ${value.strCategory}`;
-      imgThumbContainer.append(imgThumb, imgThumbCaption);
-
-      const ingredientTable = document.createElement('table');
-      const tableHeaderRow = document.createElement('tr');
-      const ingredientTh = document.createElement('th');
-      ingredientTh.innerText = 'Ingredients';
-      const measurementTh = document.createElement('th');
-      measurementTh.innerText = 'Measurement';
-
-      tableHeaderRow.append(ingredientTh, measurementTh);
-      ingredientTable.append(tableHeaderRow);
-
-      for (let i = 1; i <= 20; i++) {
-        const ingredient = `strIngredient${i}`;
-        const measurement = `strMeasure${i}`;
-        if (value[ingredient]) {
-          const createRow = document.createElement('tr');
-          const ingredientElement = document.createElement('td');
-          ingredientElement.innerText = value[ingredient];
-          const measurementElement = document.createElement('td');
-          measurementElement.innerText = value[measurement];
-
-          createRow.append(ingredientElement, measurementElement);
-          ingredientTable.append(createRow);
-        }
-      }
-
-      const mealBtn = document.createElement('button');
-      mealBtn.classList.add('pop-up-trigger-btn');
-      mealBtn.innerText = 'Read More';
-
-      cardItem.append(
-        mealTitle,
-        imgThumbContainer,
-        ingredientTable,
-        mealBtn,
-      );
-      cardList.append(cardItem);
-    });
+    cardList.meals = results;
 
     const mealBtn = document.querySelectorAll('.pop-up-trigger-btn');
 
@@ -131,7 +80,6 @@ const main = () => {
     cardContainer.style.display = 'flex';
     footer.style.display = 'block';
 
-    // cardContainer.scrollIntoView({ behavior: 'smooth' });
     function scrollToTargetAdjusted() {
       const element = cardContainer;
       const headerOffset = 80;
@@ -146,12 +94,8 @@ const main = () => {
     scrollToTargetAdjusted();
   };
 
-  const fallbackResult = (message) => {
-    cardList.innerHTML = '';
-    const errorElement = document.createElement('h3');
-    errorElement.innerText = `${message} not found`;
-
-    cardList.append(errorElement);
+  const fallbackResult = (keyword) => {
+    cardList.renderError(keyword);
 
     const cardContainer = document.querySelector('.card-container');
     const footer = document.querySelector('footer');

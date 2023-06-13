@@ -1,6 +1,5 @@
 .card-container {
   padding: 2.5rem 1rem;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -9,63 +8,60 @@
   display: none;
 }
 
-.card-list {
+card-list {
   width: 100%;
   display: flex;
   justify-content: center;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   gap: 2.2rem;
 }
 
-.card-item {
+card-item {
   display: flex;
   flex-direction: column;
   background-color: #fff;
   border-radius: 20px;
   padding: 1rem;
   width: 25rem;
-  /* min-height: 50rem; */
-  /* max-height: 40rem; */
   position: relative;
 }
 
-.card-item h3 {
+card-item h3 {
   text-align: center;
 }
 
-.card-item figure {
+card-item figure {
   padding: 1rem;
 }
 
-.card-item img {
+card-item img {
   border: 1px solid #aaa;
   border-radius: 4px;
   padding: 5px;
   width: 100%;
 }
 
-.card-item table {
+card-item table {
   border-collapse: collapse;
   margin-bottom: 3rem;
 }
 
-.card-item table th {
+card-item table th {
   text-align: left;
 }
 
-.card-item table td,
+card-item table td,
 th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
-.card-item table tr:nth-child(even) {
+card-item table tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.card-item button {
+card-item button {
   padding: 0.5rem 2rem;
   color: #dde6ed;
   text-transform: uppercase;
@@ -76,13 +72,13 @@ th {
   bottom: 1rem;
 }
 
-.card-item button:hover {
+card-item button:hover {
   background-color: #dde6ed;
   cursor: pointer;
   color: #27374d;
   box-shadow: 0 0 2px 3px rgba(255, 255, 255, 0.5);
 }
 
-.card-item:hover {
+card-item:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }

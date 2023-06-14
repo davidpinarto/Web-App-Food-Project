@@ -80,7 +80,7 @@ const main = () => {
     cardContainer.style.display = 'flex';
     footer.style.display = 'block';
 
-    function scrollToTargetAdjusted() {
+    const scrollToTargetAdjusted = () => {
       const element = cardContainer;
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -90,7 +90,7 @@ const main = () => {
         top: offsetPosition,
         behavior: 'smooth',
       });
-    }
+    };
     scrollToTargetAdjusted();
   };
 
